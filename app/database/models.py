@@ -32,7 +32,7 @@ class Tariff(Base):
     days: Mapped[int] = mapped_column(Integer())
     ips: Mapped[int] = mapped_column(Integer())
     trafic: Mapped[int] = mapped_column(Integer())
-    price: Mapped[int] = mapped_column(Numeric(5, 2))
+    price: Mapped[int] = mapped_column(Numeric(10, 2))
 
 
 class FAQ(Base):

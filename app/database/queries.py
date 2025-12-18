@@ -47,11 +47,13 @@ async def orm_change_user_tariff(
     user_id: UUID,
     tariff_id: int,
     sub_end: datetime,
+    ips: int = 2,
     tun_ids: Optional[dict[int, str]] = None
 ):
     query = update(User).where(User.id == user_id).values(
         tariff_id=tariff_id,
-        sub_end=sub_end
+        sub_end=sub_end,
+        ips=ips
     )
     await session.execute(query)
     
@@ -186,6 +188,18 @@ async def orm_get_user_server_by_ti(session: AsyncSession, tun_id: str):
 
 async def orm_delete_user_servers(session: AsyncSession, tun_id: str):
     query = delete(UserServer).where(UserServer.tun_id == tun_id)
+    await session.execute(query)
+    await session.commit()
+
+
+async def orm_get_user_servers_by_si(session: AsyncSession, server_id: int):
+    query = select(UserServer).where(UserServer.server_id == server_id)
+    result = await session.execute(query)
+    return result.scalars().all()
+
+
+async def orm_delete_user_servers_by_si(session: AsyncSession, server_id: str):
+    query = delete(UserServer).where(UserServer.server_id == server_id)
     await session.execute(query)
     await session.commit()
 

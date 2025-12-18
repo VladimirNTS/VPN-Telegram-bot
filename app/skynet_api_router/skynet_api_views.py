@@ -20,6 +20,7 @@ from app.database.queries import (
     orm_get_tariffs,
     orm_get_user,
     orm_get_admins,
+    orm_update_user
 )
 from app.utils.three_x_ui_api import ThreeXUIServer
 
@@ -44,7 +45,7 @@ async def get_clients(session: AsyncSession = Depends(get_async_session)):
             if tariff:
                 data = [order.telegram_id, order.name, order.email, order.ips, order.sub_end.strftime('%d.%m.%Y'), days_to_str(tariff.days)]
             else:
-                data = [order.telegram_id, order.name, order.email, order.ips, order.sub_end.strftime('%d.%m.%Y'), "Тариф удален"]
+                data = [order.telegram_id, order.name, order.email, order.ips, order.sub_end.strftime('%d.%m.%Y'), "Тариф удален" if order.tariff_id else "Подписка отменена"]
             
             result.append(data)
 
@@ -68,13 +69,43 @@ async def update_clients(
             await bot.send_message(admin.telegram_id, f"Ошибка: Данные для {user.name} не обнавлены! Не верная дата!")
         raise HTTPException(status_code=404, detail="Не коректная дата!")
 
-    servers = await orm_get_user_servers(session, user.id)
+    user_servers = await orm_get_user_servers(session, user.id)
+    servers = await orm_get_servers(session)
 
     new_date = datetime(int(date[0]), int(date[1]), int(date[2])+1, now.hour, now.minute, now.second, now.microsecond)
     new_unix_date = int(new_date.timestamp() * 1000)
-    for server in servers:
-        server_info = await orm_get_server(session, server.server_id)
+    
+    threex_panels = []
+    for i in servers:
+        threex_panels.append(ThreeXUIServer(
+            i.id,
+            i.url,
+            i.indoub_id,
+            i.login,
+            i.password,
+            False,
+            i.name
+        ))
+    
+    for server in user_servers:
+        for panel in threex_panels:
+            if panel.id != server.server_id:
+                continue
+            await panel.edit_client(
+                uuid = server.tun_id, 
+                name = user.name,
+                email = panel.name+'_'+str(server.id), 
+                limit_ip = data.devices, 
+                expiry_time = new_unix_date, 
+                tg_id = user.telegram_id,
 
+            )
+
+    await orm_update_user(
+        session,
+        user_id=user.id,
+        data={'ips': data.devices, 'sub_end': new_date}
+    )
 
     for admin in admins:
         await bot.send_message(admin.telegram_id, f"✅ Данные изменены для пользователя {user.name}\nДата: {new_date.strftime('%d.%m.%Y')}\nКоличество устройств: {data.devices}")
@@ -82,7 +113,7 @@ async def update_clients(
 
 @api_router.get("/subscribtion")
 async def generate_subscription_config(user_token: str, session: AsyncSession = Depends(get_async_session)):
-    user = await orm_get_user(session, UUID("20b310f27a6445218b1aa299c58baa1e"))
+    user = await orm_get_user(session, UUID(user_token))
     user_servers = await orm_get_user_servers(session, user.id)
     if not user or not user_servers:
         raise HTTPException(status_code=404, detail="User not found or no servers available")

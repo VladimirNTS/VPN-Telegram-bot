@@ -72,7 +72,7 @@ async def payment_page(
     await orm_new_payment(session, tariff_id=tariff.id, user_id=user.id)
 
     return templates.TemplateResponse(
-        "/payment_page.html", 
+    "/payment_page.html", 
         {
             "request": request, 
             "price": tariff.price, 
@@ -222,5 +222,47 @@ async def choose_server(
     return f'OK{InvId}'
 
 
+
+@payment_router.get("/add_servers")
+async def add_user_server(user_id:int, session: AsyncSession = Depends(get_async_session)):
+    user = await orm_get_user_by_tgid(session, user_id)
+
+    user_servers = await orm_get_user_servers(session, user.id)
+    servers = await orm_get_servers(session)
+    threex_panels = []
+    for i in servers:
+        threex_panels.append(ThreeXUIServer(
+            i.id,
+            i.url,
+            i.indoub_id,
+            i.login,
+            i.password,
+            i.need_gb
+        ))
+
+
+    if not user_servers:
+        end_datetime = user.sub_end
+        end_timestamp = int(end_datetime.timestamp() * 1000)
+
+        for i in threex_panels:
+            uuid = uuid4()
+            await orm_add_user_server(
+                session, 
+                server_id=i.id,
+                tun_id = str(uuid),
+                user_id = user.id,
+            )
+            user_server = await orm_get_user_server_by_ti(session, str(uuid))
+            server = await orm_get_server(session, user_server.server_id)
+            await i.add_client(
+                uuid=str(uuid),
+                email=server.name + '_' + str(user_server.id),
+                limit_ip=3,
+                expiry_time=end_timestamp,
+                tg_id=user.telegram_id,
+                name=user.name,
+            )
+        
 
 

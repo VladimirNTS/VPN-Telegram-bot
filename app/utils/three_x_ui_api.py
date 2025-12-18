@@ -7,7 +7,7 @@ from app.setup_logger import logger
 
 
 class ThreeXUIServer:
-    def __init__(self, id, url, indoub_id, login, password, need_gb = False) -> None:
+    def __init__(self, id, url, indoub_id, login, password, need_gb = False, name = '') -> None:
         self.id = id
         self.url = url
         self.indoub_id = int(indoub_id)
@@ -15,6 +15,7 @@ class ThreeXUIServer:
         self.password = password
         self.need_gb = need_gb
         self.cookies = None
+        self.name = name
 
 
     def strin_to_dict(self, string):
@@ -59,6 +60,9 @@ class ThreeXUIServer:
         if not self.cookies:
             await self.auth()
 
+        if self.need_gb and not total_gb:
+            total_gb = 30
+
         data = {
             "id": self.indoub_id,
             "settings": self.dict_to_sting({
@@ -72,7 +76,7 @@ class ThreeXUIServer:
                     "comment": name,
                     "tgId": str(tg_id),
                     "subId": uuid.split('-')[-1],
-                    "totalGB": total_gb
+                    "totalGB": 30*1073741824
                 }]
             })
         }
@@ -186,9 +190,9 @@ class ThreeXUIServer:
         async with AsyncClient() as client:
             response = await client.post(url=self.url+f"panel/api/inbounds/{self.indoub_id}/delClient/{uuid}", cookies=self.cookies)
             if response.status_code == 200:
-                data = await response.json()
+                data = response.json()
                 if data['success']:
-                    logger.info(f"Добавлен удален {uuid}")
+                    logger.info(f"Удален клиент {uuid}")
                     return True
                 else:
                     logger.warning(f"Не удалось удалить клиента {uuid}: {data['msg']}")

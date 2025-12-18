@@ -35,6 +35,8 @@ from app.database.queries import (
     orm_delete_tariff,
     orm_get_users,
     orm_get_subscribers,
+    orm_delete_user_servers_by_si,
+    orm_get_user_servers_by_si
 )
 from app.utils.three_x_ui_api import ThreeXUIServer
 
@@ -389,13 +391,31 @@ async def add_server_password(message: types.Message, state: FSMContext, session
 @admin_private_router.callback_query(StateFilter(None), F.data.startswith("delete_server"))
 async def delete_server(callback_query: types.CallbackQuery, session: AsyncSession):
     try:
-        await orm_delete_server(session, callback_query.data.split("_")[-1])
+        server_id = int(callback_query.data.split("_")[-1])
+        server = await orm_get_server(session, server_id)
+        users_servers = await orm_get_user_servers_by_si(session, server_id)
+
+        threex_panel = ThreeXUIServer(
+            id=0, 
+            url=server.url, 
+            indoub_id=server.indoub_id, 
+            login=server.login, 
+            password=server.password
+        )
+        
+        if users_servers:
+            for i in users_servers:
+                await threex_panel.delete_client(i.tun_id)
+
+        await orm_delete_user_servers_by_si(session, server_id)
+        await orm_delete_server(session, server_id)
         await callback_query.message.delete()
         await callback_query.message.answer(f"✅ сервер удален", reply_markup=admin_menu_kbrd())
+        await callback_query.answer()
     except Exception as e:
         logger.error(f"Ошибка, не удалось удалить сервер", exc_info=True)
         await callback_query.message.answer("❌ Ошибка: сервер не найден", reply_markup=admin_menu_kbrd())
-    await callback_query.answer()
+        await callback_query.answer()
 
 
 # FAQ
@@ -578,7 +598,7 @@ async def send_letter(
         except TelegramBadRequest:
             continue
         except Exception as e:
-            print(f"Ошибка при отправке {user_id}: {e}")
+            print(f"Ошибка при отправке {user.telegram_id}: {e}")
 
     await callback.message.answer(
         f"✅ Рассылка завершена\n"
