@@ -1,4 +1,5 @@
 import base64
+from urllib.parse import quote
 from datetime import datetime
 from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, Response
@@ -34,6 +35,10 @@ async def get_clients(session: AsyncSession = Depends(get_async_session)):
 
     result = []
     orders = await orm_get_users(session)
+    orders = sorted(
+        orders,
+        key=lambda o: o.created or datetime.min
+    )
     tariffs =  await orm_get_tariffs(session)
     for order in orders:
         data = []
@@ -83,7 +88,7 @@ async def update_clients(
             i.indoub_id,
             i.login,
             i.password,
-            False,
+            i.need_gb,
             i.name
         ))
     
@@ -98,7 +103,7 @@ async def update_clients(
                 limit_ip = data.devices, 
                 expiry_time = new_unix_date, 
                 tg_id = user.telegram_id,
-
+                total_gb = 30*1073741824 if panel.need_gb else 0
             )
 
     await orm_update_user(
@@ -114,6 +119,26 @@ async def update_clients(
 @api_router.get("/subscribtion")
 async def generate_subscription_config(user_token: str, session: AsyncSession = Depends(get_async_session)):
     user = await orm_get_user(session, UUID(user_token))
+    today = datetime.now()
+
+    if user.sub_end < today:
+        response = Response(
+            content=(
+                        f"vless://{user.id}@1.23.123.4:8452?"
+                        f"type=tcp&"
+                        f"spx=%2F&flow=#{quote('❌ Ваша подписка закончилась')}"
+                    )
+,
+            media_type="text/plain; charset=utf-8"
+        )
+
+        response.headers['profile-title'] = "base64:"+base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
+        response.headers["announce"] = "base64:"+base64.b64encode(f"🚀 Нажмите сюда, тут можно продлить подписку".encode('utf-8')).decode('latin-1')
+        response.headers["announce-url"] = "https://t.me/skynetaivpn_bot"
+        
+        return response
+
+
     user_servers = await orm_get_user_servers(session, user.id)
     if not user or not user_servers:
         raise HTTPException(status_code=404, detail="User not found or no servers available")
@@ -132,12 +157,16 @@ async def generate_subscription_config(user_token: str, session: AsyncSession = 
             server.password,
             server.need_gb
         ))
+
+    trafic=0
     for user_server in user_servers:
         vless_url = None
         for panel in threex_panels:
             if panel.id == user_server.server_id:
                 vless_url = await panel.get_client_vless(user_server.tun_id)
-        
+                if panel.need_gb == True:
+                    trafic = await panel.client_remain_trafic(user_server.tun_id) or 0
+
         if not vless_url:
             logger.warning(f"Пользователь не найден на сервере {user_server.server_id}")
             continue
@@ -153,9 +182,9 @@ async def generate_subscription_config(user_token: str, session: AsyncSession = 
     )
 
     response.headers['profile-title'] = "base64:"+base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
-    response.headers["announce"] = "base64:"+base64.b64encode("🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n👑 - без рекламы на YouTube\n🎧 - YouTube можно сворачивать".encode('utf-8')).decode('latin-1')
+    response.headers["announce"] = "base64:"+base64.b64encode(f"🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n👑 - без рекламы на YouTube\n🎧 - YouTube можно сворачивать \n\nОтображаемое количество трафика относиться только к обходу белых списков.".encode('utf-8')).decode('latin-1')
     response.headers["announce-url"] = "https://t.me/skynetaivpn_bot"
-    response.headers["subscription-userinfo"] = f"expire={int(user.sub_end.timestamp())}"
+    response.headers["subscription-userinfo"] = f"expire={int(user.sub_end.timestamp())}; upload={trafic[0]}; download={trafic[1]}; total={trafic[2]}"
     response.headers["X-Frame-Options"] = 'SAMEORIGIN'
     response.headers["Referrer-Policy"] = 'no-referrer-when-downgrade'
     response.headers["X-Content-Type-Options"] = 'nosniff'

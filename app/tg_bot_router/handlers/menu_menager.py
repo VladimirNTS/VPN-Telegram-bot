@@ -4,7 +4,7 @@ import os
 from sqlalchemy.ext.asyncio import AsyncSession
 from aiogram import types
 
-from app.database.queries import orm_get_faq, orm_get_servers, orm_get_tariff, orm_get_tariffs, orm_get_user_by_tgid, orm_get_user_servers
+from app.database.queries import orm_get_faq, orm_change_user_tariff, orm_get_servers, orm_get_tariff, orm_get_tariffs, orm_get_user_by_tgid, orm_get_user_servers
 from app.utils.days_to_month import days_to_str
 from app.tg_bot_router.kbds.inline import (
     MenuCallback,
@@ -89,6 +89,14 @@ async def check_subscribe(
     user_id: int
 ) -> tuple:
     user = await orm_get_user_by_tgid(session, user_id)
+    if menu_name == "cancel":
+        await orm_change_user_tariff(
+            session, 
+            user.id,
+            tariff_id = 0,
+            sub_end = user.sub_end,
+            ips = user.ips,
+        )
     tariff = await orm_get_tariff(session, user.tariff_id)
     
     if not user:
@@ -97,11 +105,12 @@ async def check_subscribe(
     user_servers = await orm_get_user_servers(session, user.id)
 
     if user.tariff_id > 0:
-        caption = f"⚙️ Ваша подписка SkynetVPN: \n├ Цена: {tariff.price}\n├ Срок: {days_to_str(tariff.days)}\n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\nВаша ссылка для подключения, нажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
+        caption = f"⚙️ Ваша подписка SkynetVPN: \n├ Цена: {tariff.price}\n├ Срок: {days_to_str(tariff.days)}\n├ Количество устройств: {user.ips}\n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\nВаша ссылка для подключения, нажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
         keyboard = get_inlineMix_btns(
             btns={
                 "↗️ Подключиться v2rayTun": f"{os.getenv('URL')}/bot/v2ray?telegram_id={user.telegram_id}",
                 "🛍 Продлить подписку": MenuCallback(level=2, menu_name='subscribes').pack(),
+                "❌ Отменить подписку": MenuCallback(level=4, menu_name='cancel').pack(),
                 "⬅️ Назад": MenuCallback(level=1, menu_name='main').pack()
             },
             sizes=(1,)

@@ -31,6 +31,7 @@ from app.database.queries import (
     orm_get_user_servers,
     orm_new_payment,
     orm_update_user,
+    orm_get_subscribers
 )
 from app.utils.three_x_ui_api import ThreeXUIServer
 
@@ -222,47 +223,14 @@ async def choose_server(
     return f'OK{InvId}'
 
 
+async def recurent_payment():
+    async with get_async_session() as session:
+        users = await orm_get_subscribers(session)
+        today = datetime.combine(date.today(), time.min)
 
-@payment_router.get("/add_servers")
-async def add_user_server(user_id:int, session: AsyncSession = Depends(get_async_session)):
-    user = await orm_get_user_by_tgid(session, user_id)
+        for user in users:
+            if user.status != 0 and user.sub_end <= today:
+                pass
 
-    user_servers = await orm_get_user_servers(session, user.id)
-    servers = await orm_get_servers(session)
-    threex_panels = []
-    for i in servers:
-        threex_panels.append(ThreeXUIServer(
-            i.id,
-            i.url,
-            i.indoub_id,
-            i.login,
-            i.password,
-            i.need_gb
-        ))
-
-
-    if not user_servers:
-        end_datetime = user.sub_end
-        end_timestamp = int(end_datetime.timestamp() * 1000)
-
-        for i in threex_panels:
-            uuid = uuid4()
-            await orm_add_user_server(
-                session, 
-                server_id=i.id,
-                tun_id = str(uuid),
-                user_id = user.id,
-            )
-            user_server = await orm_get_user_server_by_ti(session, str(uuid))
-            server = await orm_get_server(session, user_server.server_id)
-            await i.add_client(
-                uuid=str(uuid),
-                email=server.name + '_' + str(user_server.id),
-                limit_ip=3,
-                expiry_time=end_timestamp,
-                tg_id=user.telegram_id,
-                name=user.name,
-            )
-        
 
 

@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
 
 from app.site_router.site_views import site_router
 from app.setup_logger import logger
@@ -18,6 +20,7 @@ from app.utils.days_to_month import days_to_str
 from app.tg_bot_router.bot import bot
 from app.skynet_api_router.schemas import UpdateClientGS
 from app.setup_logger import logger
+from app.payment_router.payment_views import recurent_payment
 from app.database.queries import (
     orm_get_server,
     orm_get_servers,
@@ -37,10 +40,22 @@ from app.utils.three_x_ui_api import ThreeXUIServer
 async def lifespan(app: FastAPI):
     await create_db()
     await start_bot()
+
+    trigger = CronTrigger(
+        year="*", month="*", day="*", hour="3", minute="0", second="5"
+    )
+    scheduler.add_job(
+        recurent_payment,
+        trigger=trigger,
+        id='recurent_payment',
+        replace_existing=True
+    )
+    scheduler.start()
     yield
     await stop_bot()
 
 
+scheduler = AsyncIOScheduler()
 app = FastAPI(lifespan=lifespan)
 app.include_router(site_router, tags=['Site'])
 app.include_router(bot_router, tags=['TG_BOT'])
@@ -75,6 +90,10 @@ async def generate_subscription_config(user_token: str, session: AsyncSession = 
         for panel in threex_panels:
             if panel.id == user_server.server_id:
                 vless_url = await panel.get_client_vless(user_server.tun_id)
+                if panel.need_gb == True:
+                    trafic = await panel.client_remain_trafic(user_server.tun_id) or 0
+
+
         
         if not vless_url:
             logger.warning(f"Пользователь не найден на сервере {user_server.server_id}")
@@ -91,9 +110,9 @@ async def generate_subscription_config(user_token: str, session: AsyncSession = 
     )
 
     response.headers['profile-title'] = "base64:"+base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
-    response.headers["announce"] = "base64:"+base64.b64encode("🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n👑 - без рекламы на YouTube\n🎧 - YouTube можно сворачивать".encode('utf-8')).decode('latin-1')
+    response.headers["announce"] = "base64:"+base64.b64encode(f"🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n👑 - без рекламы на YouTube\n🎧 - YouTube можно сворачивать \n\nОтображаемое количество трафика относиться только к обходу белых списков.".encode('utf-8')).decode('latin-1')
     response.headers["announce-url"] = "https://t.me/skynetaivpn_bot"
-    response.headers["subscription-userinfo"] = f"expire={int(user.sub_end.timestamp())}"
+    response.headers["subscription-userinfo"] = f"expire={int(user.sub_end.timestamp())}; upload={trafic[0]}; download={trafic[1]}; total={trafic[2]}"
     response.headers["X-Frame-Options"] = 'SAMEORIGIN'
     response.headers["Referrer-Policy"] = 'no-referrer-when-downgrade'
     response.headers["X-Content-Type-Options"] = 'nosniff'

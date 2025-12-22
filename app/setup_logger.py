@@ -32,7 +32,7 @@ file_handler.setFormatter(logging.Formatter(
 
 logger = logging.getLogger("skynet")
 logger.setLevel(logging.INFO)
-logger.addHandler(console_handler)
+#logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
  

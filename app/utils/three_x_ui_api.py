@@ -37,7 +37,7 @@ class ThreeXUIServer:
             if response.status_code == 200:
                 data = response.json()
                 if data['success']:
-                    logger.info(f"Авторизация прошла успешно")
+                    pass
                 else:
                     logger.warning(f"Не удалось авторизоваться: {self.url} - {data['msg']}")
 
@@ -140,6 +140,26 @@ class ThreeXUIServer:
             else:
                 logger.warning(f"Не удалось изменить клиента {email}: {response.status_code}")
                 return False
+
+    
+    async def client_remain_trafic(self, uuid):
+        if not self.cookies:
+            await self.auth()
+
+        async with AsyncClient() as client:
+            response = await client.get(url=f"{self.url}panel/api/inbounds/getClientTrafficsById/{uuid}", cookies=self.cookies)
+            if response.status_code == 200:
+                data= response.json()
+                if data['success']:
+                    return (data['obj'][0]['up'], data['obj'][0]['down'], data['obj'][0]['total'])
+                else:
+                    logger.warning(f"Не удалось получить трафик клиента {uuid}: {data['msg']}")
+                    return False
+            else:
+                logger.warning(f"Не удалось получить трафик клиента {uuid}: {response.status_code}")
+                return False
+
+
 
 
     async def get_client_vless(self, uuid):
