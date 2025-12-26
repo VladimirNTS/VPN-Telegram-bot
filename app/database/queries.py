@@ -295,7 +295,7 @@ async def orm_end_payment(session: AsyncSession, id: int):
     await session.commit()
 
 
-async def orm_new_payment(session: AsyncSession, user_id: int, tariff_id: int, recurent: bool = False):
+async def orm_new_payment(session: AsyncSession, user_id: UUID, tariff_id: int, recurent: bool = False):
     '''Создает новую запись о платеже в таблицу'''
     obj = Payment(
         user_id=user_id,
@@ -322,6 +322,12 @@ async def orm_get_last_payment_id(session: AsyncSession):
     return payment.id if payment else 0
 
 
-
+async def orm_get_last_payment(session: AsyncSession, user_id: UUID):
+    '''Возвращает последнюю запись о платеже'''
+    query = select(Payment).where(Payment.user_id == user_id).where(Payment.recurent == False).order_by(Payment.id.desc()).limit(1)
+    result = await session.execute(query)
+    payment = result.scalar_one_or_none()
+    
+    return payment.id if payment else 0
 
 

@@ -3,22 +3,25 @@ import os
 import json
 import hashlib
 from typing import Union
-from uuid import uuid4
+from uuid import UUID, uuid4
 
+from aiogram import Bot
 from dateutil.relativedelta import relativedelta
 from fastapi import APIRouter, Depends, Form, HTTPException, Request 
 from fastapi.templating import Jinja2Templates
 from starlette.responses import FileResponse, HTMLResponse
 from sqlalchemy.ext.asyncio import AsyncSession
+from httpx import AsyncClient
 
 from app.tg_bot_router.kbds.inline import succes_pay_btns
 from app.utils.days_to_month import days_to_str
-from app.database.engine import get_async_session
+from app.database.engine import get_async_session, async_session_maker
 from app.setup_logger import logger
 from app.tg_bot_router.bot import bot
 from app.database.queries import (
     orm_add_user_server,
     orm_change_user_tariff,
+    orm_get_last_payment,
     orm_get_payment,
     orm_get_server,
     orm_get_servers,
@@ -223,14 +226,69 @@ async def choose_server(
     return f'OK{InvId}'
 
 
-async def recurent_payment():
-    async with get_async_session() as session:
+async def recurent_payment(bot: Bot):
+    async with async_session_maker() as session:
         users = await orm_get_subscribers(session)
         today = datetime.combine(date.today(), time.min)
 
         for user in users:
-            if user.status != 0 and user.sub_end <= today:
-                pass
+            if user.tariff_id != 0 and user.sub_end <= today:
+                await orm_new_payment(
+                    session,
+                    tariff_id=user.tariff_id,
+                    user_id=user.id,
+                    recurent=True
+                )
+                last_payment = await orm_get_last_payment(session, UUID(user.id))
+                invoice_id = await orm_get_last_payment_id(session)
+                if not last_payment:
+                    print('No pay')
+                    continue
+                
+                tariff = await orm_get_tariff(session, tariff_id=user.tariff_id)
+                if not tariff:
+                    logger.warning("Тариф удален")
+                    continue
+                
+                receipt =  {
+                    "sno":"patent",
+                    "items": [
+                        {
+                        "name": f"Подписка SkynetVPN на {days_to_str(tariff.sub_time)}",
+                        "quantity": 1,
+                        "sum": float(tariff.price),
+                        "payment_method": "full_payment",
+                        "payment_object": "service",
+                        "tax": "vat10"
+                        },
+                    ]
+                }
+
+                base_string = f"{os.getenv('SHOP_ID')}:{tariff.price}:{invoice_id}:{json.dumps(receipt, ensure_ascii=False)}:{os.getenv('PASSWORD_1')}"
+                signature_value = hashlib.md5(base_string.encode("utf-8")).hexdigest()
+
+                async with AsyncClient() as session:
+                    response = await session.post(
+                        'https://auth.robokassa.ru/Merchant/Recurring',
+                        data={
+                            "MerchantLogin": os.getenv('SHOP_ID'),
+                            "InvoiceID": int(invoice_id),
+                            "PreviousInvoiceID": last_payment,
+                            "Description": "Оплата подписки skynetVPN",
+                            "Receipt": receipt,
+                            "SignatureValue": signature_value,
+                            "OutSum": float(tariff.price),
+                            'IsTest': True,
+                        }
+                    )
+                    
+            elif user.sub_end and not user.tariff_id and user.sub_end > today-relativedelta(days=3):
+                tariff = await orm_get_tariff(session, user.tariff_id)
+                await bot.send_message(user.telegram_id, f'⚠️ Ваша подписка исеткает через 3 дня({user.sub_end}), \n\nПожалуйста, заранее позаботьтесь о продлении, чтобы всегда оставаться на связи.')
+            elif user.sub_end and user.sub_end > today and not user.tariff_id:
+                await bot.send_message(user.telegram_id, '⚠️ Срок действия вашей подписки завершён. Чтобы продолжить работу, оформите продление.')
+            else:
+                continue
 
 
 
