@@ -119,78 +119,86 @@ async def update_clients(
 @api_router.get("/subscribtion")
 async def generate_subscription_config(user_token: str, session: AsyncSession = Depends(get_async_session)):
     user = await orm_get_user(session, UUID(user_token))
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
     today = datetime.now()
 
-    if user.sub_end < today:
+    if not user.sub_end or user.sub_end < today:
         response = Response(
             content=(
-                        f"vless://{user.id}@1.23.123.4:8452?"
-                        f"type=tcp&"
-                        f"spx=%2F&flow=#{quote('❌ Ваша подписка закончилась')}"
-                    )
-,
+                f"vless://{user.id}@1.23.123.4:8452?"
+                f"type=tcp&spx=%2F&flow=#{quote('❌ Ваша подписка закончилась')}"
+            ),
             media_type="text/plain; charset=utf-8"
         )
-
-        response.headers['profile-title'] = "base64:"+base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
-        response.headers["announce"] = "base64:"+base64.b64encode(f"🚀 Нажмите сюда, тут можно продлить подписку".encode('utf-8')).decode('latin-1')
+        response.headers['profile-title'] = "base64:" + base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
+        response.headers["announce"] = "base64:" + base64.b64encode("🚀 Нажмите сюда, тут можно продлить подписку".encode('utf-8')).decode('latin-1')
         response.headers["announce-url"] = "https://t.me/skynetaivpn_bot"
-        
         return response
 
-
     user_servers = await orm_get_user_servers(session, user.id)
-    if not user or not user_servers:
-        raise HTTPException(status_code=404, detail="User not found or no servers available")
+    if not user_servers:
+        raise HTTPException(status_code=404, detail="No servers for user")
 
-    # 3. Генерируем vless:// ссылки для каждого сервера
-    config_lines = []
-    
     servers = await orm_get_servers(session)
-    threex_panels = []
+    threex_panels = [
+        ThreeXUIServer(
+            s.id, s.url, s.indoub_id, s.login, s.password, s.need_gb
+        )
+        for s in servers
+    ]
+
+    config_lines = []
+    trafic = 0
+    # Итерируемся по серверам (отсортированы по id), а не по user_servers
     for server in servers:
-        threex_panels.append(ThreeXUIServer(
-            server.id,
-            server.url,
-            server.indoub_id,
-            server.login,
-            server.password,
-            server.need_gb
-        ))
+        # Ищем user_server для этого сервера
+        user_server = None
+        for us in user_servers:
+            if us.server_id == server.id:
+                user_server = us
+                break
 
-    trafic=0
-    for user_server in user_servers:
-        vless_url = None
-        for panel in threex_panels:
-            if panel.id == user_server.server_id:
-                vless_url = await panel.get_client_vless(user_server.tun_id)
-                if panel.need_gb == True:
-                    trafic = await panel.client_remain_trafic(user_server.tun_id) or 0
-
-        if not vless_url:
-            logger.warning(f"Пользователь не найден на сервере {user_server.server_id}")
+        if not user_server:
             continue
-        config_lines.append(vless_url)
-    
+
+        # Ищем панель
+        for panel in threex_panels:
+            if panel.id == server.id:
+                vless_url = await panel.get_client_vless(user_server.tun_id)
+                if panel.need_gb:
+                    trafic = await panel.client_remain_trafic(user_server.tun_id) or 0
+                if vless_url:
+                    config_lines.append(vless_url)
+                break
+
     if not config_lines:
-        raise HTTPException(status_code=404)
-    subscription_content = "\n".join(config_lines)
+        raise HTTPException(status_code=404, detail="No configs found")
 
     response = Response(
-        content=subscription_content,
+        content="\n".join(config_lines),
         media_type="text/plain; charset=utf-8"
     )
 
-    response.headers['profile-title'] = "base64:"+base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
-    response.headers["announce"] = "base64:"+base64.b64encode(f"🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n👑 - без рекламы на YouTube\n🎧 - YouTube можно сворачивать \n\nОтображаемое количество трафика относиться только к обходу белых списков.".encode('utf-8')).decode('latin-1')
+    response.headers['profile-title'] = "base64:" + base64.b64encode('⚡️ SkynetVPN'.encode('utf-8')).decode('latin-1')
+    response.headers["announce"] = "base64:" + base64.b64encode(
+        ("🚀 Нажмите сюда, чтобы перейти в нашего бота\n\n"
+         "👑 - без рекламы на YouTube\n"
+         "🎧 - YouTube можно сворачивать \n\n"
+         "Отображаемое количество трафика относиться только к обходу белых списков.").encode('utf-8')
+    ).decode('latin-1')
     response.headers["announce-url"] = "https://t.me/skynetaivpn_bot"
-    response.headers["subscription-userinfo"] = f"expire={int(user.sub_end.timestamp())}; upload={trafic[0]}; download={trafic[1]}; total={trafic[2]}"
-    response.headers["X-Frame-Options"] = 'SAMEORIGIN'
-    response.headers["Referrer-Policy"] = 'no-referrer-when-downgrade'
-    response.headers["X-Content-Type-Options"] = 'nosniff'
-    response.headers["Permissions-Policy"] = 'geolocation=(), microphone=()'
+    response.headers["subscription-userinfo"] = (
+        f"expire={int(user.sub_end.timestamp())}; "
+        f"upload={trafic[0]}; download={trafic[1]}; total={trafic[2]}"
+    )
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Referrer-Policy"] = "no-referrer-when-downgrade"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=()"
     response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains; preload"
 
-
     return response
+
 

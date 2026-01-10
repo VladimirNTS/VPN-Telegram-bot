@@ -136,7 +136,7 @@ async def orm_update_server(
 
 
 async def orm_get_servers(session: AsyncSession):
-    query = select(Server)
+    query = select(Server).order_by(Server.id.asc())
     result = await session.execute(query)
     return result.scalars().all()
 
@@ -228,6 +228,15 @@ async def orm_update_tariff(session: AsyncSession, tariff_id, data):
 
 
 async def orm_delete_tariff(session: AsyncSession, tariff_id):
+    # Сначала удаляем связанные платежи
+    delete_payments = delete(Payment).where(Payment.tariff_id == tariff_id)
+    await session.execute(delete_payments)
+
+    # Обнуляем tariff_id у пользователей с этим тарифом
+    update_users = update(User).where(User.tariff_id == tariff_id).values(tariff_id=0)
+    await session.execute(update_users)
+
+    # Теперь удаляем сам тариф
     query = delete(Tariff).where(Tariff.id == tariff_id)
     await session.execute(query)
     await session.commit()

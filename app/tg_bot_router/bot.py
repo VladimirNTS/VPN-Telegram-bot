@@ -16,7 +16,11 @@ from app.tg_bot_router.middlewares.session_middleware import DataBaseSession
 from app.database.engine import async_session_maker, get_async_session
 
 
-bot = Bot(token=str(os.getenv('BOT_TOKEN')), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+token = os.getenv("BOT_TOKEN")
+if not token:
+    raise RuntimeError("BOT_TOKEN is not set")
+
+bot = Bot(token=token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 dp = Dispatcher()
 dp.update.middleware.register(DataBaseSession(session_pool=async_session_maker))
@@ -27,9 +31,13 @@ bot_router = APIRouter(prefix='/bot')
 
 
 @bot_router.post("")
-async def webhook(request: Request) -> None:
-    update = types.Update.model_validate(await request.json(), context={"bot": bot})
+async def webhook(request: Request):
+    payload = await request.json()
+    logger.warning(f"WEBHOOK HIT chat={payload.get('message', {}).get('chat', {}).get('id')} keys={list(payload.keys())}")
+
+    update = types.Update.model_validate(payload, context={"bot": bot})
     await dp.feed_update(bot, update)
+    return {"ok": True}
 
 
 @bot_router.get("/v2ray")
@@ -57,8 +65,10 @@ async def start_bot():
     
 
 async def stop_bot():
-    await bot.delete_webhook()
+    await bot.delete_webhook(drop_pending_updates=True)
+    await bot.session.close()
     logger.info("Бот остановлен")
+
 
 
 

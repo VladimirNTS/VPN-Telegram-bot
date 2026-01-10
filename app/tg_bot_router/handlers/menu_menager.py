@@ -105,22 +105,24 @@ async def check_subscribe(
     user_servers = await orm_get_user_servers(session, user.id)
 
     if user.tariff_id > 0:
-        caption = f"⚙️ Ваша подписка SkynetVPN: \n├ Цена: {tariff.price}\n├ Срок: {days_to_str(tariff.days)}\n├ Количество устройств: {user.ips}\n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\nВаша ссылка для подключения, нажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
+        caption = f"⚙️ Ваша подписка SkynetVPN: \n├ Цена: {tariff.price}\n├ Срок: {days_to_str(tariff.days)}\n├ Количество устройств: {user.ips}\n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\nВаша ссылка на ключ. 🔑 \n\nНажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
         keyboard = get_inlineMix_btns(
             btns={
                 "↗️ Подключиться v2rayTun": f"{os.getenv('URL')}/bot/v2ray?telegram_id={user.telegram_id}",
                 "🛍 Продлить подписку": MenuCallback(level=2, menu_name='subscribes').pack(),
                 "❌ Отменить подписку": MenuCallback(level=4, menu_name='cancel').pack(),
+                '🔄 Обновить ключ': MenuCallback(level=4, menu_name='check').pack(),
                 "⬅️ Назад": MenuCallback(level=1, menu_name='main').pack()
             },
             sizes=(1,)
         )
     elif user_servers:
-        caption = f"⚙️ Ваша подписка SkynetVPN: \n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\n⚠️ Ваша подписка отменена и больше не будет автоматически продлеваться.\n\nВаша ссылка для подключения, нажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
+        caption = f"⚙️ Ваша подписка SkynetVPN: \n└ оплачено до {user.sub_end.strftime('%d-%m-%Y')}\n\n⚠️ Ваша подписка отменена и больше не будет автоматически продлеваться.\n\nВаша ссылка на ключ. 🔑 \n\nНажмите 1 раз чтобы скопировать: <code>{os.getenv('URL')}/api/subscribtion?user_token={user.id}</code>"
         keyboard = get_inlineMix_btns(
             btns={
                 "↗️ Подключиться v2rayTun": f"{os.getenv('URL')}/bot/v2ray?telegram_id={user.telegram_id}",
                 "🛍 Продлить подписку": MenuCallback(level=2, menu_name='subscribes').pack(),
+                '🔄 Обновить ключ': MenuCallback(level=4, menu_name='check').pack(),
                 "⬅️ Назад": MenuCallback(level=1, menu_name='main').pack()
             },
             sizes=(1,)
@@ -168,11 +170,34 @@ async def help_menu(level: int, menu_name: str) -> tuple:
     if menu_name == 'help':
         caption = "<b>Выберите своё устройство:</b> \n\nСделали пошаговые инструкции для подключения VPN! Нажмите на нужную кнопку и подключайтесь за несколько минут."
         keyboard = choose_device_btns()
+        return caption, keyboard
+
+    # --- ЛОГИКА ДЛЯ WINDOWS (4 СКРИНА) ---
+    elif menu_name == 'windows':
+        # Сюда вставьте реальные file_id ваших 4 скриншотов
+        windows_file_ids = [
+            "AgACAgIAAxkBAAI8Z2liQG8WHMNi86qAywjp-4E74eXbAAJYD2sbdzkQS-e206zBEjc6AQADAgADeQADOAQ",  # ID 1
+            "AgACAgIAAxkBAAI8aWliQIFSah1I-HnRqLEAAesaL4WWKgACWw9rG3c5EEvExokAAdUtTEIBAAMCAAN5AAM4BA",  # ID 2
+            "AgACAgIAAxkBAAI8a2liQJEQUL9EQ2YgYIEnjvt3G69_AAJdD2sbdzkQS-MRv_dOBQ1oAQADAgADeQADOAQ",  # ID 3
+            "AgACAgIAAxkBAAI8bWliQKViSn1g_gtJd_sBLXzC5gWCAAJeD2sbdzkQS6DLPJ_zcIgbAQADAgADeQADOAQ"  # ID 4
+        ]
+
+        album = []
+        for file_id in windows_file_ids:
+            # InputMediaPhoto принимает file_id или FSInputFile
+            album.append(types.InputMediaPhoto(media=file_id))
+
+        caption_text = text['windows'].split('|||')[0]
+        keyboard = install_btns(text['windows'].split('|||')[-1], level)
+
+        # Возвращаем 3 элемента: альбом, текст, клавиатуру
+        return album, caption_text, keyboard
+    # -------------------------------------
+
     else:
         caption = text[menu_name].split('|||')[0]
         keyboard = install_btns(text[menu_name].split('|||')[-1], level)
-
-    return caption, keyboard
+        return caption, keyboard
 
 
 

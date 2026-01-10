@@ -1,54 +1,128 @@
-2025-12-19 17:36:45,902 INFO: Бот остановлен
-2025-12-19 17:38:17,939 INFO: Бот запущен
-2025-12-19 17:39:04,139 INFO: Бот остановлен
-2025-12-19 17:39:07,096 INFO: Бот запущен
-2025-12-20 05:15:55,949 INFO: Изменен клиент 🇷🇺 РФ 👑_79
-2025-12-20 05:15:56,495 INFO: Изменен клиент 🇺🇸 США 🎧_78
-2025-12-20 05:15:56,681 INFO: Изменен клиент 🇦🇱 Албания 👑_77
-2025-12-20 05:15:56,892 INFO: Изменен клиент 🇨🇭Швейцария 👑_80
-2025-12-20 05:15:57,372 INFO: Изменен клиент 🇩🇪 Германия № 1 👑_557
-2025-12-20 05:15:57,788 INFO: Изменен клиент 🇩🇪 Германия № 2 👑_637
-2025-12-20 05:15:58,279 INFO: Изменен клиент 🇩🇪 Германия № 3 👑_717
-2025-12-20 05:15:58,673 INFO: Изменен клиент 🇩🇪 Германия № 4 👑_797
-2025-12-20 05:15:58,914 INFO: Изменен клиент 🏳️ Обход белых списков_1270
-2025-12-20 07:39:56,567 WARNING: Wrong refer id
-2025-12-20 09:11:32,958 WARNING: Wrong refer id
-2025-12-20 14:40:02,271 WARNING: Wrong refer id
-2025-12-20 21:42:10,807 WARNING: Wrong refer id
-2025-12-21 13:37:56,199 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:56,741 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:56,954 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:57,204 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:58,275 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:58,822 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:37:59,493 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:38:00,009 INFO: Добавлен клиент EPlokhuta
-2025-12-21 13:38:00,227 INFO: Добавлен клиент EPlokhuta
-2025-12-21 14:36:02,783 WARNING: Wrong refer id
-2025-12-21 14:43:45,618 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:46,151 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:46,352 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:47,224 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:47,878 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:48,449 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:48,933 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:49,603 INFO: Добавлен клиент o_verr
-2025-12-21 14:43:49,826 INFO: Добавлен клиент o_verr
-2025-12-21 14:52:06,913 WARNING: Wrong refer id
-2025-12-21 14:53:12,135 WARNING: Wrong refer id
-2025-12-21 15:10:14,118 INFO: Изменен клиент 🇷🇺 РФ 👑_395
-2025-12-21 15:10:14,681 INFO: Изменен клиент 🇺🇸 США 🎧_394
-2025-12-21 15:10:14,878 INFO: Изменен клиент 🇦🇱 Албания 👑_393
-2025-12-21 15:10:15,555 INFO: Изменен клиент 🇨🇭Швейцария 👑_396
-2025-12-21 15:10:16,319 INFO: Изменен клиент 🇩🇪 Германия № 1 👑_613
-2025-12-21 15:10:16,967 INFO: Изменен клиент 🇩🇪 Германия № 2 👑_693
-2025-12-21 15:10:17,827 INFO: Изменен клиент 🇩🇪 Германия № 3 👑_773
-2025-12-21 15:10:18,413 INFO: Изменен клиент 🇩🇪 Германия № 4 👑_853
-2025-12-21 15:10:18,634 INFO: Изменен клиент 🏳️ Обход белых списков_1317
-2025-12-22 13:44:44,633 ERROR: Ошибка при смене инлайн меню: 
+nohup: ignoring input
+INFO:     Will watch for changes in these directories: ['/root/SkynetVPN-Telegram-bot']
+INFO:     Uvicorn running on http://0.0.0.0:443 (Press CTRL+C to quit)
+INFO:     Started reloader process [1111566] using StatReload
+INFO:     Started server process [1111568]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     10.0.0.1:53062 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:53072 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:53074 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
 Traceback (most recent call last):
-  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 59, in user_menu
-    await callback_query.message.edit_caption(caption=caption, reply_markup=reply_markup)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
     return await bot(self)
            ^^^^^^^^^^^^^^^
@@ -64,11 +138,123 @@ Traceback (most recent call last):
     )
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
     raise TelegramBadRequest(method=method, message=description)
-aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
-2025-12-22 13:44:47,804 ERROR: Ошибка при смене инлайн меню: 
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:41146 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
 Traceback (most recent call last):
-  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 59, in user_menu
-    await callback_query.message.edit_caption(caption=caption, reply_markup=reply_markup)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
     return await bot(self)
            ^^^^^^^^^^^^^^^
@@ -84,11 +270,123 @@ Traceback (most recent call last):
     )
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
     raise TelegramBadRequest(method=method, message=description)
-aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
-2025-12-22 13:44:49,892 ERROR: Ошибка при смене инлайн меню: 
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:41158 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
 Traceback (most recent call last):
-  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 59, in user_menu
-    await callback_query.message.edit_caption(caption=caption, reply_markup=reply_markup)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
     return await bot(self)
            ^^^^^^^^^^^^^^^
@@ -104,19 +402,123 @@ Traceback (most recent call last):
     )
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
     raise TelegramBadRequest(method=method, message=description)
-aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
-2025-12-22 17:24:19,893 INFO: Бот остановлен
-2025-12-22 17:24:22,595 INFO: Бот запущен
-2025-12-22 17:49:35,615 INFO: Бот остановлен
-2025-12-22 17:49:38,439 INFO: Бот запущен
-2025-12-22 17:50:20,032 INFO: Бот остановлен
-2025-12-22 17:50:23,167 INFO: Бот запущен
-2025-12-22 17:53:51,275 INFO: Бот запущен
-2025-12-22 17:54:47,737 INFO: Бот запущен
-2025-12-22 17:54:47,857 ERROR: Ошибка при смене инлайн меню: 
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:41166 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
 Traceback (most recent call last):
-  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 59, in user_menu
-    await callback_query.message.edit_caption(caption=caption, reply_markup=reply_markup)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
     return await bot(self)
            ^^^^^^^^^^^^^^^
@@ -132,9 +534,1356 @@ Traceback (most recent call last):
     )
   File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
     raise TelegramBadRequest(method=method, message=description)
-aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
-2025-12-22 17:56:03,590 INFO: Бот остановлен
-2025-12-22 17:56:07,963 INFO: Бот запущен
-2025-12-22 17:57:05,004 WARNING: Wrong refer id
-2025-12-22 18:07:20,654 INFO: Бот остановлен
-2025-12-22 18:07:23,495 INFO: Бот запущен
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:51284 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:53188 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:56630 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:47964 - "GET /api/subscribtion?user_token=18f3144a-ac50-4710-a325-27c467db78b4 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:47966 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:47976 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:47992 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:48008 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:35530 - "POST /bot HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 290, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/bot.py", line 39, in webhook
+    await dp.feed_update(bot, update)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/middlewares/session_middleware.py", line 21, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/app/tg_bot_router/handlers/user_private.py", line 83, in user_menu
+    await callback_query.message.answer_media_group(media=album)
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/methods/base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/bot.py", line 485, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "/root/SkynetVPN-Telegram-bot/.venv/lib/python3.13/site-packages/aiogram/client/session/base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: failed to send message #1 with the error message "Wrong file identifier/HTTP URL specified"
+INFO:     10.0.0.1:35520 - "GET /api/subscribtion?user_token=f5abb83b-0ac5-4291-afa2-2c0d7e8b2599 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app/tg_bot_router/handlers/user_private.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1111568]
+INFO:     Started server process [1112479]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     10.0.0.1:48552 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:36418 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:44192 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:53888 - "POST /bot HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app/tg_bot_router/handlers/menu_menager.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1112479]
+INFO:     Started server process [1113208]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     10.0.0.1:41646 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41648 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41666 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41672 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41658 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57246 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57248 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57250 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57264 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57270 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:46620 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:59964 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:59316 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:59322 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:59338 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:59346 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51506 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51522 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51532 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51534 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48600 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48620 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48628 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48640 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:45510 - "GET /api/subscribtion?user_token=869e7c39-ce9a-4259-9744-997f2ab40aa8 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34210 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:33206 - "GET /site/terms_of_service HTTP/1.1" 200 OK
+INFO:     10.0.0.1:33208 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:40376 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:40390 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:40402 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:40418 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:40434 - "GET /site/privacy_policy HTTP/1.1" 200 OK
+INFO:     10.0.0.1:40436 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:55168 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56286 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:36346 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57722 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57732 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57740 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57752 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:42052 - "GET /api/subscribtion?user_token=13aeb8b4-06e8-4b0d-9c2e-01f0e1e6317f HTTP/1.1" 200 OK
+INFO:     10.0.0.1:57886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57892 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57906 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:57918 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:58738 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:58754 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:58768 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:58774 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51782 - "GET /api/subscribtion?user_token=e0fa25de-c560-44f4-a8ea-f2ac773bff88 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:51796 - "GET /subscription?user_token=727117302 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34626 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34648 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34654 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34662 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:51720 - "GET /api/subscribtion?user_token=084b9d22-59ad-431b-b586-a26189e06b9b HTTP/1.1" 200 OK
+INFO:     10.0.0.1:51728 - "GET /subscription?user_token=590637034 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:51254 - "GET /api/subscribtion?user_token=4719dd3d-4a66-4324-8d7f-e126d74f9606 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:39542 - "GET /subscription?user_token=111603243 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:41046 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41068 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41076 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:41092 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49022 - "GET /subscription?user_token=767462852 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56284 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:56286 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:56288 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:56294 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47528 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:45410 - "GET /subscription?user_token=240680595 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:39668 - "GET /api/subscribtion?token=330de810-3031-4d9e-aa9e-c86ae6745bab HTTP/1.1" 422 Unprocessable Content
+INFO:     10.0.0.1:39678 - "GET /api/subscribtion?token=330de810-3031-4d9e-aa9e-c86ae6745bab HTTP/1.1" 422 Unprocessable Content
+INFO:     10.0.0.1:41972 - "GET /api/subscribtion?user_token=6f2fa069-e6b3-4fbb-8808-540a1bbbcfdf HTTP/1.1" 200 OK
+INFO:     10.0.0.1:36286 - "GET /api/subscribtion?user_token=330de810-3031-4d9e-aa9e-c86ae6745bab HTTP/1.1" 200 OK
+INFO:     10.0.0.1:43878 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43884 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43888 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43890 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:56854 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:46954 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34528 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34542 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34550 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34554 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34784 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34790 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34796 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:34808 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:35234 - "GET /subscription?user_token=318875085 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:42406 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:42410 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:42426 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:42436 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:58302 - "GET /api/subscribtion?user_token=4ce53fa2-3e90-41ff-8d19-ee17fb59767c HTTP/1.1" 200 OK
+INFO:     10.0.0.1:60882 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:60898 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:60912 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:60926 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47030 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47038 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48444 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48450 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48466 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:48474 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37932 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37944 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37952 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37966 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:38788 - "GET /subscription?user_token=6480942923 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:46626 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:46628 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56072 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56078 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56082 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56084 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:56092 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:52508 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:52518 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:52534 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:52536 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47930 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:59354 - "GET /api/subscribtion?user_token=d4e13482-f7a5-4b9b-97c0-c714dd51bf5b HTTP/1.1" 200 OK
+INFO:     10.0.0.1:44734 - "GET /api/subscribtion?user_token=9fcb5c7c-3553-45cd-b8a9-2dab74cd8966 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:49476 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49480 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49496 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49506 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37168 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37174 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37180 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:37194 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47288 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47298 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47308 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47324 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:39506 - "GET /api/subscribtion?user_token=2edbf3ea-b50c-4d8f-a3c1-fa1043676714 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:40966 - "GET /subscription?user_token=394012654 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:59100 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:56384 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47160 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47164 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47170 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:47184 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:32932 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:32936 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:32938 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:32940 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:35978 - "GET /subscription?user_token=5249201007 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:40128 - "GET /subscription?user_token=671251144 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:43386 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43388 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43394 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:43396 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:52418 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:52424 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34354 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34358 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34658 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34674 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:34688 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:40770 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:58120 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:50476 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:50486 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:50488 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:45360 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:45366 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:45374 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:45380 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:38200 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54014 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54018 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54036 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:54040 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:54048 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:54052 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:54580 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54588 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54602 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:42928 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:42936 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:41158 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:48398 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:48404 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:54144 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:53688 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:53690 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:53692 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:53706 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:38906 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:51144 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:51146 - "POST /bot HTTP/1.1" 200 OK
+INFO:     10.0.0.1:47408 - "GET /subscription?user_token=5249201007 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:49078 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49094 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49104 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:49110 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:60814 - "GET /subscription?user_token=596591653 HTTP/1.1" 200 OK
+INFO:     10.0.0.1:49994 - "GET / HTTP/1.1" 404 Not Found
+INFO:     10.0.0.1:50006 - "GET / HTTP/1.1" 404 Not Found
+1-10 14:12:50,751 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:13:03,790 WARNING: WEBHOOK HIT chat=7010343980 keys=['update_id', 'message']
+2026-01-10 14:13:03,791 WARNING: Wrong refer id
+2026-01-10 14:13:04,759 WARNING: WEBHOOK HIT chat=318875085 keys=['update_id', 'message']
+2026-01-10 14:13:04,760 WARNING: Wrong refer id
+2026-01-10 14:13:10,203 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:17:00,171 WARNING: WEBHOOK HIT chat=6627608258 keys=['update_id', 'message']
+2026-01-10 14:17:00,171 WARNING: Wrong refer id
+2026-01-10 14:17:42,776 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:17:45,682 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:26:11,590 INFO: Бот запущен
+2026-01-10 14:26:26,936 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:26:29,561 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:26:32,034 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:26:32,984 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:26:34,213 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:27:32,420 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:27:36,865 WARNING: WEBHOOK HIT chat=7010343980 keys=['update_id', 'message']
+2026-01-10 14:27:36,866 WARNING: Wrong refer id
+2026-01-10 14:27:40,155 WARNING: WEBHOOK HIT chat=7010343980 keys=['update_id', 'message']
+2026-01-10 14:27:40,156 INFO: menu content type=<class 'aiogram.types.input_media_photo.InputMediaPhoto'> media=<aiogram.types.input_file.FSInputFile object at 0x7088d94020d0> caption_len=371
+2026-01-10 14:28:08,901 WARNING: WEBHOOK HIT chat=7010343980 keys=['update_id', 'message']
+2026-01-10 14:28:08,902 INFO: menu content type=<class 'aiogram.types.input_media_photo.InputMediaPhoto'> media=<aiogram.types.input_file.FSInputFile object at 0x7088d9402490> caption_len=371
+2026-01-10 14:28:25,155 INFO: Бот остановлен
+2026-01-10 14:28:27,704 INFO: Бот запущен
+2026-01-10 14:28:31,833 WARNING: WEBHOOK HIT chat=7010343980 keys=['update_id', 'message']
+2026-01-10 14:28:31,833 WARNING: Wrong refer id
+2026-01-10 14:28:35,002 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:28:39,092 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:09,392 INFO: Бот остановлен
+2026-01-10 14:31:12,022 INFO: Бот запущен
+2026-01-10 14:31:16,320 INFO: Бот остановлен
+2026-01-10 14:31:18,876 INFO: Бот запущен
+2026-01-10 14:31:19,193 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:20,778 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:22,499 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:26,985 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:39,780 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:41,171 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:31:42,845 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:32:22,447 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:32:24,076 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:32:25,751 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:32:42,657 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:32:45,602 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:34:29,160 INFO: Бот остановлен
+2026-01-10 14:34:32,142 INFO: Бот запущен
+2026-01-10 14:34:35,552 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:34:36,587 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:34:37,484 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:34:39,504 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:34:41,874 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:16,802 INFO: Бот остановлен
+2026-01-10 14:35:19,311 INFO: Бот запущен
+2026-01-10 14:35:24,730 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:24,814 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:26,896 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:30,977 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:39,066 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:55,143 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:35:58,012 INFO: Бот остановлен
+2026-01-10 14:36:00,693 INFO: Бот запущен
+2026-01-10 14:36:03,160 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:36:04,473 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:36:05,330 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:37:25,045 INFO: Бот остановлен
+2026-01-10 14:37:27,985 INFO: Бот запущен
+2026-01-10 14:37:51,477 INFO: Бот остановлен
+2026-01-10 14:37:54,207 INFO: Бот запущен
+2026-01-10 14:37:54,513 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:37:55,759 WARNING: WEBHOOK HIT chat=None keys=['update_id', 'callback_query']
+2026-01-10 14:38:02,816 INFO: Бот остановлен
+2026-01-10 14:38:05,213 INFO: Бот запущен

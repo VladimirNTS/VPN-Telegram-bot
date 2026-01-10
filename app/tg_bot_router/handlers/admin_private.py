@@ -97,7 +97,8 @@ async def get_tariffs(message: types.Message, session: AsyncSession):
 @admin_private_router.callback_query(StateFilter(None), F.data.startswith("delete_tariff"))
 async def delete_tariff(callback_query: types.CallbackQuery, session: AsyncSession):
     try:
-        await orm_delete_tariff(session, callback_query.data.split("_")[-1])
+        tariff_id = int(callback_query.data.split("_")[-1])
+        await orm_delete_tariff(session, tariff_id)
         await callback_query.message.delete()
         await callback_query.message.answer(f"✅ Тариф удален", reply_markup=admin_menu_kbrd())
     except:
@@ -611,4 +612,70 @@ async def send_letter(
 
 
 
-
+@admin_private_router.message(Command('fix_traffic'))
+async def fix_traffic_limits(message: types.Message, session: AsyncSession):
+    """Исправить лимиты трафика у всех пользователей"""
+    from app.database.queries import orm_get_users, orm_get_user_servers, orm_get_servers, orm_get_tariff
+    from app.utils.three_x_ui_api import ThreeXUIServer
+    
+    await message.answer("🔄 Исправляю лимиты трафика...")
+    
+    users = await orm_get_users(session)
+    servers = await orm_get_servers(session)
+    
+    # Создаём панели
+    panels = []
+    for s in servers:
+        panels.append(ThreeXUIServer(
+            s.id, s.url, s.indoub_id, s.login, s.password, s.need_gb, s.name
+        ))
+    
+    fixed = 0
+    for user in users:
+        if not user.tariff_id or user.tariff_id == 0:
+            continue
+            
+        tariff = await orm_get_tariff(session, user.tariff_id)
+        if not tariff:
+            continue
+        
+        user_servers = await orm_get_user_servers(session, user.id)
+        
+        for us in user_servers:
+            for panel in panels:
+                if panel.id != us.server_id:
+                    continue
+                
+                # Лимит только для need_gb серверов
+                if panel.need_gb:
+                    traffic_limit = 30  * 1073741824
+                else:
+                    traffic_limit = 0
+                
+                # Обновляем клиента
+                result = await panel.edit_client(
+                    uuid=us.tun_id,
+                    email=panel.name + '_' + str(us.id),
+                    limit_ip=tariff.ips,
+                    expiry_time=int(user.sub_end.timestamp() * 1000),
+                    tg_id=user.telegram_id,
+                    name=user.name,
+                    total_gb=traffic_limit
+                )
+                
+                if result:
+                    fixed += 1
+                    logger.info(f"Обновлён {user.name} на {panel.name}: {traffic_limit} bytes")
+    
+    await message.answer(
+        f"✅ Готово!\n📊 Обновлено клиентов: {fixed}",
+        reply_markup=admin_menu_kbrd()
+    )
+@admin_private_router.message(Command('reset_traffic'))
+async def reset_traffic_cmd(message: types.Message, session: AsyncSession, bot: Bot):
+    """Ручной сброс трафика на обходе"""
+    from app.payment_router.payment_views import reset_monthly_traffic
+    
+    await message.answer("🔄 Сбрасываю трафик на обходе белых списков...")
+    await reset_monthly_traffic(bot)
+    await message.answer("✅ Трафик сброшен!", reply_markup=admin_menu_kbrd())

@@ -60,8 +60,10 @@ class ThreeXUIServer:
         if not self.cookies:
             await self.auth()
 
-        if self.need_gb and not total_gb:
-            total_gb = 30
+        if self.need_gb:
+            traffic_limit = (total_gb if total_gb else 30) * 1073741824
+        else:
+            traffic_limit = 0
 
         data = {
             "id": self.indoub_id,
@@ -76,7 +78,7 @@ class ThreeXUIServer:
                     "comment": name,
                     "tgId": str(tg_id),
                     "subId": uuid.split('-')[-1],
-                    "totalGB": 30*1073741824
+                    "totalGB": traffic_limit
                 }]
             })
         }
@@ -221,6 +223,27 @@ class ThreeXUIServer:
                 logger.warning(f"Не удалось добавить клиента {uuid}: {response.status_code}")
                 return False
 
+    async def reset_client_traffic(self, email: str):
+        """Сбросить трафик клиента по email"""
+        if not self.cookies:
+            await self.auth()
+
+        async with AsyncClient() as client:
+            response = await client.post(
+                url=f"{self.url}panel/api/inbounds/{self.indoub_id}/resetClientTraffic/{email}",
+                cookies=self.cookies
+            )
+            if response.status_code == 200:
+                data = response.json()
+                if data['success']:
+                    logger.info(f"Сброшен трафик клиента {email}")
+                    return True
+                else:
+                    logger.warning(f"Не удалось сбросить трафик {email}: {data['msg']}")
+                    return False
+            else:
+                logger.warning(f"Не удалось сбросить трафик {email}: {response.status_code}")
+                return False
 
 
 

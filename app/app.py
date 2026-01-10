@@ -16,40 +16,67 @@ from app.tg_bot_router.bot import start_bot, stop_bot, bot_router
 from app.payment_router.payment_views import payment_router
 from app.skynet_api_router.skynet_api_views import api_router
 from app.database.engine import get_async_session
-from app.utils.days_to_month import days_to_str
 from app.tg_bot_router.bot import bot
-from app.skynet_api_router.schemas import UpdateClientGS
 from app.setup_logger import logger
 from app.payment_router.payment_views import recurent_payment
 from app.database.queries import (
-    orm_get_server,
     orm_get_servers,
-    orm_get_subscribers,
     orm_get_user_by_tgid,
-    orm_get_user_servers, 
-    orm_get_users,
-    orm_get_tariffs,
-    orm_get_user,
-    orm_get_admins,
+    orm_get_user_servers,
 )
 from app.utils.three_x_ui_api import ThreeXUIServer
-
-
+from app.payment_router.payment_views import recurent_payment, check_subscription_expiry, reset_monthly_traffic,notify_expired_users
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await create_db()
     await start_bot()
 
-    trigger = CronTrigger(
-        year="*", month="*", day="*", hour="3", minute="0", second="5"
+    expired_trigger = CronTrigger(
+        year="*", month="*", day="*", hour="15", minute="13", second="0"
+    )
+    scheduler.add_job(
+        notify_expired_users,
+        trigger=expired_trigger,
+        id='notify_expired_users',
+        replace_existing=True,
+        args=[bot]
+    )
+
+    monthly_reset_trigger = CronTrigger(
+    year="*", month="*", day="1", hour="0", minute="5", second="0"
+    )
+    scheduler.add_job(
+        reset_monthly_traffic,
+        trigger=monthly_reset_trigger,
+        id='reset_monthly_traffic',
+        replace_existing=True,
+        args=[bot]
+    )
+
+    subscription_trigger = CronTrigger(
+        year="*", month="*", day="*", hour="0", minute="0", second="0"
+    )
+    scheduler.add_job(
+        check_subscription_expiry,
+        trigger=subscription_trigger,
+        id='check_subscription_expiry',
+        replace_existing=True,
+        args=[bot]
+    )
+
+
+    recurent_trigger = CronTrigger(
+        year="*", month="*", day="*", hour="0", minute="0", second="0"
     )
     scheduler.add_job(
         recurent_payment,
-        trigger=trigger,
+        trigger=recurent_trigger,
         id='recurent_payment',
-        replace_existing=True
+        replace_existing=True,
+        args=[bot]
     )
+
     scheduler.start()
     yield
     await stop_bot()
