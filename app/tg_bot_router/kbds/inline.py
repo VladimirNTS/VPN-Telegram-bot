@@ -62,7 +62,7 @@ def choose_device_btns(sizes: tuple = (2, 2, 2, 1)):
         btns={
             '📱 Android': MenuCallback(level=5, menu_name='android').pack(), 
             '🍏 Iphone': MenuCallback(level=5, menu_name='iphone').pack(), 
-            '🖥 Windows': MenuCallback(level=5, menu_name='windows').pack(), 
+            '🖥 Windows 10/11': MenuCallback(level=5, menu_name='windows').pack(), 
             '💻 MacOS': MenuCallback(level=5, menu_name='macos').pack(), 
             '🐧 Linux': MenuCallback(level=5, menu_name='linux').pack(),
             '📺 AndroidTV': MenuCallback(level=5, menu_name='androidtv').pack(), 
